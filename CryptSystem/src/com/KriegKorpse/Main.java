@@ -9,14 +9,14 @@ public class Main{
         User Solas = new User();
         User Lyss = new User();
 
-        String text = "Приеду завтра в полдень";
-        System.out.println(" Original " + text);
+        String text = "Приеду завтра в полдень, Карпов Алексей Леонидович";
+        System.out.println(" Original  " + text);
 
         RandomKey key = new RandomKey(text.length());
-        System.out.println("      Key " + key.key);
+        System.out.println("       Key " + key.key);
 
         ArrayList<Byte> enc_bytes = Solas.Crypt(text, key.key);
-        System.out.println("enc_bytes " + enc_bytes);
+        System.out.println(" enc_bytes " + enc_bytes);
 
         String decr_text = Lyss.Decrypt(enc_bytes, key.key);
         System.out.println(" decr_text " + decr_text);
@@ -57,7 +57,7 @@ class User {
 
     public ArrayList<Byte> Crypt(String text, ArrayList<Byte> key) {
         ArrayList<Byte> byte_text = StrToByteArr(text);
-        System.out.println("Byte text " + byte_text);
+        System.out.println(" Byte text " + byte_text);
         ArrayList<Byte> encrypted_bytes = ByteXOR(byte_text, key);
         return encrypted_bytes;
     }
